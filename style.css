@@ -16,7 +16,7 @@ html body {
   padding: 15px;
   border: rgba(0, 0, 0, 0.05);
   width: 100%;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
 }
 
@@ -25,7 +25,7 @@ html body {
   padding: 20px;
   border: rgba(0, 0, 0, 0.05);
   width: 100%;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
