@@ -167,8 +167,6 @@ function searchStudent() {
         return student.name.toLowerCase().includes(input.toLowerCase())
     })
 
-    console.log(filterArray)
-
     if (filterArray.length === 0) {
         renderData(students)
         return
