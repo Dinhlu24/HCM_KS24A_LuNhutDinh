@@ -94,7 +94,7 @@ function loadStudentForm(id) {
     let form = document.querySelector("form")
     let formButton = form.querySelector(".submitPlace")
 
-    formButton.innerHTML = `<button onclick="updateData(${index})" type="button" class="btn btn-secondary">Cập nhật</button>
+    formButton.innerHTML = `<button onclick="updateData(${id})" type="button" class="btn btn-secondary">Cập nhật</button>
     `
 
     form.name.value = students[index].name
@@ -156,6 +156,7 @@ function updateData(id) {
     form.reset()
 
     renderData(students)
+    console.log(students)
     alert("Cập nhật thành công !!!")
 }
 
