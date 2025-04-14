@@ -25,8 +25,8 @@ function renderData(studentList) {
               <td>${studentList[i].email}</td>
               <td>${studentList[i].Class}</td>
               <td style="display: flex; justify-content: space-around">
-                <button onclick="loadStudentForm(${i})" type="button" class="btn btn-success" style="background-color: #2ecc71 ;width: 40%;">Sửa</button>
-                <button onclick="deleteStudent(${i})" type="button" class="btn btn-danger" style="background-color: #E74C3C ;width: 40%;">Xóa</button>
+                <button onclick="loadStudentForm(${i})" type="button" class="btn btn-success" style="width: 40%">Sửa</button>
+                <button onclick="deleteStudent(${i})" type="button" class="btn btn-danger" style="width: 40%">Xóa</button>
               </td>
             </tr>
         `
