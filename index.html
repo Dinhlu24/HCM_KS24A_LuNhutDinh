@@ -67,13 +67,13 @@
         </form>
       </div>
       <div class="renderPlace">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Tìm kiếm theo tên..."
-          id="inputFind"
-          oninput="searchStudent()"
-        />
+        <form id="inputFind" style="width: 100%">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Tìm kiếm theo tên..."
+          />
+        </form>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -90,8 +90,14 @@
               <td>SV001</td>
               <td>cuongtm@gmail.com</td>
               <td>@HN_ENG_KS24A</td>
-              <td>
-                <button type="button" class="btn btn-success">Sửa</button>
+              <td style="display: flex; justify-content: space-around">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  style="background-color: #2ecc71 ;width: 30%;"
+                >
+                  Sửa
+                </button>
                 <button type="button" class="btn btn-danger">Xóa</button>
               </td>
             </tr> -->
