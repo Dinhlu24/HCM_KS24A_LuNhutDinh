@@ -156,7 +156,6 @@ function updateData(id) {
     form.reset()
 
     renderData(students)
-    console.log(students)
     alert("Cập nhật thành công !!!")
 }
 
