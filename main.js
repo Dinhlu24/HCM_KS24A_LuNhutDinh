@@ -160,19 +160,24 @@ function updateData(id) {
     alert("Cập nhật thành công !!!")
 }
 
-function searchStudent() {
-    let input = document.querySelector("#inputFind").value
 
-    let filterArray = students.filter(student => {
-        return student.name.toLowerCase().includes(input.toLowerCase())
-    })
+let form = document.querySelector("#inputFind")
+let input = document.querySelector("#inputFind input")
 
-    if (filterArray.length === 0) {
-        renderData(students)
-        return
+form.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault()
+        let filterArray = students.filter(student => {
+            return student.name.toLowerCase().includes(input.value.trim().toLowerCase())
+        })
+
+        if (filterArray.length === 0) {
+            renderData(students)
+            return
+        }
+
+        renderData(filterArray)
     }
-
-    renderData(filterArray)
-}
+})
 
 renderData(students)
