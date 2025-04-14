@@ -1,0 +1,49 @@
+html body {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.inputPlace {
+  background-color: white;
+  padding: 15px;
+  border: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.renderPlace {
+  background-color: white;
+  padding: 20px;
+  border: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+tr,
+td {
+  text-align: center;
+}
+
+.notify {
+  display: none;
+}
+
+.notifyError {
+  display: block;
+  color: red;
+}
