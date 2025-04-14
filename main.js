@@ -1,11 +1,13 @@
 let students = [
     {
+        id: 0,
         name: "Trần Minh Cường",
         mssv: "SV001",
         email: "cuongtm@gmail.com",
         Class: "@HN_ENG_KS24A"
     },
     {
+        id: 1,
         name: "Lu Nhựt Đình",
         mssv: "SV002",
         email: "dinh@gmail.com",
@@ -25,8 +27,8 @@ function renderData(studentList) {
               <td>${studentList[i].email}</td>
               <td>${studentList[i].Class}</td>
               <td style="display: flex; justify-content: space-around">
-                <button onclick="loadStudentForm(${i})" type="button" class="btn btn-success" style="width: 40%">Sửa</button>
-                <button onclick="deleteStudent(${i})" type="button" class="btn btn-danger" style="width: 40%">Xóa</button>
+                <button onclick="loadStudentForm(${studentList[i].id})" type="button" class="btn btn-success" style="width: 40%">Sửa</button>
+                <button onclick="deleteStudent(${studentList[i].id})" type="button" class="btn btn-danger" style="width: 40%">Xóa</button>
               </td>
             </tr>
         `
@@ -51,7 +53,7 @@ function addStudent(event) {
     event.preventDefault()
 
     let form = event.target
-    let name = form.name.value, mssv = form.mssv.value, email = form.email.value, Class = form.Class.value
+    let id = students.length, name = form.name.value, mssv = form.mssv.value, email = form.email.value, Class = form.Class.value
     let notify = form.querySelectorAll(".notify")
 
     notify[0].classList.remove("notifyError")
@@ -73,12 +75,13 @@ function addStudent(event) {
         return
     }
 
-    students.push({ name, mssv, email, Class })
+    students.push({ id, name, mssv, email, Class })
     renderData(students)
     form.reset()
 }
 
-function deleteStudent(index) {
+function deleteStudent(id) {
+    let index = students.findIndex(student => student.id == id)
     if (confirm("Bạn có chắc là muốn xóa sinh viên này không ?")) {
         students.splice(index, 1)
         alert("Đã xóa thành công")
@@ -86,7 +89,8 @@ function deleteStudent(index) {
     }
 }
 
-function loadStudentForm(index) {
+function loadStudentForm(id) {
+    let index = students.findIndex(student => student.id == id)
     let form = document.querySelector("form")
     let formButton = form.querySelector(".submitPlace")
 
@@ -99,7 +103,8 @@ function loadStudentForm(index) {
     form.Class.value = students[index].Class
 }
 
-function updateData(index) {
+function updateData(id) {
+    let index = students.findIndex(student => student.id == id)
     let form = document.querySelector("form")
     let name = form.name.value, mssv = form.mssv.value, email = form.email.value, Class = form.Class.value
     let notify = form.querySelectorAll(".notify")
@@ -147,8 +152,9 @@ function updateData(index) {
             </button>
     `
 
-    students.splice(index, 1, { name, mssv, email, Class })
+    students.splice(index, 1, { id, name, mssv, email, Class })
     form.reset()
+
     renderData(students)
     console.log(students)
     alert("Cập nhật thành công !!!")
